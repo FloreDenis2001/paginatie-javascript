@@ -143,10 +143,7 @@ header{
     justify-content: center;
 }
 
-.modal-container{
-    width: 500px;
-    height: 500px;
-}
+
 
 .edit-modal,.delete-modal,.save-btn,.cancel-btn{
     font-size: 1.3em;
@@ -177,8 +174,21 @@ header{
     border-radius: 100%;
     border: 2px solid #4ECCA3;
 }
+ .edit-hover{
+    margin:50px;
+    width: 500px;
+    height: 600px;
+    background-color: #232931;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    position: absolute;
+    top: 22%;
+    left: 34.3%; 
+}
 
-.modal-container{
+.modal-container,.edit-hover{
     margin: 50px;
     width: 500px;
     height: 600px;
@@ -187,7 +197,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 .modal-container p{
@@ -232,17 +242,7 @@ body{
     display: none;
 }
 
-.edit-hover{
-    margin:20px 50px;
-    width: 500px;
-    height: 600px;
-    background-color: #232931;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
-}
+
 
 .upload{
     left: -60px;
@@ -298,7 +298,6 @@ body{
 .input-container{
     width: 250px;
     height: 60px;
-    background-color: red;
     border-radius: 10px;
     margin-bottom: 20px;
     display: flex;
@@ -310,6 +309,7 @@ body{
     height: 30px;
     font-size: 1em;
     background-color: #4ECCA3;
+    border:2px solid #4ECCA3;
 }
 .cancel-btn{
     margin-left: 20px;
@@ -334,5 +334,17 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.edit-container{
+  cursor: pointer;
+  position:absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 8, 8, 0.7);
+  display: none;
+  text-align: center;
+  line-height: 30px;
 }
 

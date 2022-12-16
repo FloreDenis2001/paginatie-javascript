@@ -180,7 +180,8 @@ function editCreate(card){
     roundDiv.classList.add('round');
 
     let icon=document.createElement('i');
-    icon.classList.add('fa-solid fa-upload');
+    icon.classList.add('fa-solid');
+    icon.classList.add('fa-upload');
 
     let inputImg=document.createElement('input');
     inputImg.type='file';
@@ -195,11 +196,15 @@ function editCreate(card){
 
     let inputEmailCreate=document.createElement('input');
     inputEmailCreate.type='text';
-    inputEmailCreate.classList.add="email-edit";
+    inputEmailCreate.classList.add("email-edit");
+    inputEmailCreate.value=card.email;
+    inputEmailCreate.placeholder='Type new email';
 
     let inputNameCreate=document.createElement('input');
     inputNameCreate.type='text';
-    inputNameCreate.classList.add="name-edit";
+    inputNameCreate.placeholder='Type new name ... '
+    inputNameCreate.classList.add("name-edit");
+    inputNameCreate.value=card.name.first+" "+card.name.last;
 
 
      let saveContainer=document.createElement('div');
@@ -207,14 +212,32 @@ function editCreate(card){
 
      let btnSave=document.createElement('div');
      btnSave.classList.add('save-btn');
+     btnSave.textContent='SAVE';
+     
+     let btnCancel=document.createElement('div');
+     btnCancel.classList.add('cancel-btn');
+     btnCancel.textContent='CANCEL';
+     
+     saveContainer.appendChild(btnSave);
+     saveContainer.appendChild(btnCancel);
 
 
 
+    editDiv.appendChild(uploadDiv);
     editDiv.appendChild(inputNameCreate);
     editDiv.appendChild(inputEmailCreate);
+    editDiv.appendChild(saveContainer);
+
 
     return editDiv;
    
 }
 
 
+function removeCard(arr,card){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]===card){
+            delete arr[i];
+        }
+    }
+}
