@@ -8,45 +8,71 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
+
 
 .title-head{
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 2.5em;
     font-weight: 800;
+    margin-left: 200px;
 }
 
 
 .search-container{
-    background-color: white;
+    background-color: #232931;
     display: flex;
     flex-direction: row;
     border-radius: 5px;
+    margin-right: 300px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #4ECCA3;
+    border-radius:50px;
+    padding-left: 20px;
 }
 
 .input-search{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
     height: 30px;
-    width: 150px;
-    background-color: white;
-}
+    width: 350px;
+    background-color: #232931;
+    border: none;
+    padding: 2px;
 
+}
+.input-search::placeholder{
+    color: white;
+}
 .search-container input:focus{
-    border-color: white;
+    outline: none; 
 }
 
 .btn-search{
-    width: 100%;
-    height:100%;
-    margin-top: 5px;
-    border: none;
+    background-color: #232931;
+    color: white;
+    font-size: 1.3em;
+    width:40px;
+    height:40px;
+    border-radius: 100%;
+    border:3px solid #232931;
+}
+
+.btn-search:hover{
+    background-color: #4ECCA3;
+    border:3px solid #4ECCA3;
+    transition: all 1s;
+    color: #232931;
+    font-size: 1.3em;
 }
 
 .cards{
-    background-color: #393E46;
+    background-color: #225c46;
     width: 100%;
-    height: 200vh;
+    height: 120vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -59,9 +85,9 @@ header{
   align-items: center;
   justify-content: center;
   background-color: #232931;
-  width: 30%;
+  width: 26%;
   height: 450px;
-  margin:20px 0px;
+  margin:10px 0px;
   border-radius: 10px;
   box-shadow: 5px 2px 16px -3px #4ECCA3;
 
@@ -71,6 +97,7 @@ header{
     width: 130px;
     height: 130px;
     border-radius: 100%;
+    border: 2px solid #4ECCA3;
 }
 
 .card-name{
@@ -88,5 +115,224 @@ header{
 .card-line{
     width: 60%;
     color: white;
+}
+
+.page-item{
+    width:30px;
+    text-align: center;
+    list-style: none;
+    border:2px solid #4ECCA3;
+    margin: 2px;
+    border-radius: 50px;
+    background-color: #232931;
+    color: white;
+}
+
+
+.page-item:hover{
+    background-color: #4ECCA3;
+    border-color: #232931;
+}
+
+.pagination{
+    height: 5vh;
+    background-color:#232931;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container{
+    width: 500px;
+    height: 500px;
+}
+
+.edit-modal,.delete-modal,.save-btn,.cancel-btn{
+    font-size: 1.3em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100px;
+    height: 35px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    
+}
+
+
+.edit-modal{
+    margin-top: 20px;
+    background-color: rgb(184, 175, 125);
+}
+
+.delete-modal{
+    margin-top: 20px;
+    margin-left: 15px;
+    background-color: rgb(165, 97, 97);
+}
+
+.modal-container img{
+    width:200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 2px solid #4ECCA3;
+}
+
+.modal-container{
+    margin: 50px;
+    width: 500px;
+    height: 600px;
+    padding-top: 20px;
+    background-color: #232931;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.modal-container p{
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4em;
+}
+
+.buttons{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.exit-btn{
+    background-color: #232931;
+    color: #4ECCA3;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3em;
+    margin-left: 80%;
+    padding-bottom:50px;
+}
+
+
+body{
+
+    position: relative;
+
+}
+
+
+.modal{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 8, 8, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:0px;
+    display: none;
+}
+
+.edit-hover{
+    margin:20px 50px;
+    width: 500px;
+    height: 600px;
+    background-color: #232931;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.upload{
+    left: -60px;
+    width: 100px;
+    position: relative;
+    margin:50px;
+}
+
+.upload img{
+    width: 200px;
+    border-radius:50%;
+    border:2px solid #4ECCA3
+}
+
+ .round {
+    position: absolute;
+    bottom: 0;
+    right: -80%;
+    background:#4ECCA3;
+    width: 52px;
+    height: 52px;
+    line-height: 53px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.round input[type = "file"] {
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+}
+.name-edit::placeholder,.email-edit::placeholder{
+   
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.name-edit:focus,.email-edit:focus{
+    border: none;
+    outline: none;
+}
+.name-edit,.email-edit{
+    background-color: #4ECCA3;
+    color: white;
+    padding: 0px 15px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.input-container{
+    width: 250px;
+    height: 60px;
+    background-color: red;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel-btn,.save-btn{
+    height: 30px;
+    font-size: 1em;
+    background-color: #4ECCA3;
+}
+.cancel-btn{
+    margin-left: 20px;
+    background-color: #232931;
+    color: #ffffff;
+    border: 2px solid #4ECCA3;
+}
+
+.cancel-btn:hover{
+   color: white;
+    background-color: #4ECCA3;
+}
+
+.save-btn:hover{
+    color:white;
+    background-color: #232931;
+    border:2px solid #4ECCA3
+}
+
+.save-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
