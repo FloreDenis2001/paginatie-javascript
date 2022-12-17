@@ -189,6 +189,7 @@ header{
 }
 
 .modal-container,.edit-hover{
+    position: relative;
     margin: 50px;
     width: 500px;
     height: 600px;
@@ -348,3 +349,21 @@ body{
   line-height: 30px;
 }
 
+
+.prevBtn,.nextBtn{
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 50px;
+    position: absolute; 
+}
+
+.prevBtn{
+    top: 50%;
+    margin-right: 390px;
+}
+
+.nextBtn{
+    top: 50%;
+    margin-left: 390px;
+}
