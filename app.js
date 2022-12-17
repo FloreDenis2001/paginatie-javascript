@@ -77,7 +77,7 @@ asideContainer.addEventListener("click",(e)=>{
 asideEdit.addEventListener("click",(e)=>{
     let obj=e.target;
     let container=obj.parentNode.parentNode;
-    let positionData=findPositionByEmail(data,container.children[2].textContent);
+    let positionDataEdit=findPositionByEmail(data,container.children[2].value);
     let containerImg=container.children[0];
     let containerInputImg=containerImg.children[1];
 
@@ -89,12 +89,12 @@ asideEdit.addEventListener("click",(e)=>{
     }else if(obj.classList.contains("save-btn")){
         let valueName=container.children[1].value;
         if(valueName.value!=""){
-        updateName(data,positionData,valueName);
+        updateName(data,positionDataEdit,valueName);
         }
     
         let valueImg=containerInputImg.children[1].value;
         if(valueImg.value){
-        updateImg(data,positionData,valueImg);
+        updateImg(data,positionDataEdit,valueImg);
         }
 
 
