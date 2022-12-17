@@ -108,9 +108,30 @@ function createModal(card){
     let cardImg=document.createElement('img');
     cardImg.src=card.picture.medium;
 
+    let containerNext=document.createElement("div");
+    containerNext.classList.add('line-name');
+    
+
+    let prevBtn=document.createElement('i');
+   
+    prevBtn.classList.add('fa-sharp');
+    prevBtn.classList.add('fa-solid');
+    prevBtn.classList.add('fa-arrow-left');
+    prevBtn.classList.add('prevBtn');
+
     let cardName=document.createElement('p');
     cardName.classList.add('modal-name');
     cardName.textContent=card.name.first+" "+card.name.last;
+
+
+
+     let nextBtn=document.createElement('i');
+     nextBtn.classList.add('fa-sharp');
+     nextBtn.classList.add('fa-solid');
+     nextBtn.classList.add('fa-arrow-right');
+     nextBtn.classList.add('nextBtn');
+   
+  
 
     let cardEmail=document.createElement('p');
     cardEmail.classList.add('email-modal');
@@ -151,6 +172,8 @@ function createModal(card){
     cardModal.appendChild(cardEmail);
     cardModal.appendChild(cardLine);
     cardModal.appendChild(buttons);
+    cardModal.appendChild(prevBtn);
+    cardModal.appendChild(nextBtn);
 
 
     return cardModal;
@@ -180,7 +203,8 @@ function editCreate(card){
     roundDiv.classList.add('round');
 
     let icon=document.createElement('i');
-    icon.classList.add('fa-solid fa-upload');
+    icon.classList.add('fa-solid');
+    icon.classList.add('fa-upload');
 
     let inputImg=document.createElement('input');
     inputImg.type='file';
@@ -195,11 +219,16 @@ function editCreate(card){
 
     let inputEmailCreate=document.createElement('input');
     inputEmailCreate.type='text';
-    inputEmailCreate.classList.add="email-edit";
+    inputEmailCreate.classList.add("email-edit");
+    inputEmailCreate.value=card.email;
+    inputEmailCreate.placeholder='Type new email';
+    inputEmailCreate.disabled=1;
 
     let inputNameCreate=document.createElement('input');
     inputNameCreate.type='text';
-    inputNameCreate.classList.add="name-edit";
+    inputNameCreate.placeholder='Type new name ... '
+    inputNameCreate.classList.add("name-edit");
+    inputNameCreate.value=card.name.first+" "+card.name.last;
 
 
      let saveContainer=document.createElement('div');
@@ -207,14 +236,68 @@ function editCreate(card){
 
      let btnSave=document.createElement('div');
      btnSave.classList.add('save-btn');
+     btnSave.textContent='SAVE';
+     
+     let btnCancel=document.createElement('div');
+     btnCancel.classList.add('cancel-btn');
+     btnCancel.textContent='CANCEL';
+     
+     saveContainer.appendChild(btnSave);
+     saveContainer.appendChild(btnCancel);
 
 
 
+    editDiv.appendChild(uploadDiv);
     editDiv.appendChild(inputNameCreate);
     editDiv.appendChild(inputEmailCreate);
+    editDiv.appendChild(saveContainer);
+
 
     return editDiv;
    
 }
 
 
+function removeByEmail(arr,email){
+    let filter=[];
+    for(let i=0;i<arr.length;i++){
+        if(!(arr[i].email===email)){
+           filter.push(arr[i]);
+        }
+    }
+    return filter;
+}
+function findPositionByEmail(arr,email){
+    let count=0;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i].email===email){
+          return count;
+        }else{
+            count++;
+        }
+    }
+}
+function updateName(arr,position,newName){
+    for(let i=0;i<arr.length;i++){
+        if(i===position){
+            let string=newName.split(" ");
+            arr[i].name.first=string[0];
+            arr[i].name.last=string[1];
+        }
+    }
+}
+function updateImg(arr,position,newImg){
+    for(let i=0;i<arr.length;i++){
+        if(i===position){
+            arr[i].picture.medium=newImg;
+        }
+    }
+}
+function findByName(arr,name){
+    for(let i=0;i<arr.length;i++){
+        let string=name.toLowerCase().split(" ");
+        if(arr[i].name.first.toLowerCase()===string[0] && arr[i].name.last.toLowerCase()===(string[1])){
+         return arr[i];
+        }
+    }
+}
