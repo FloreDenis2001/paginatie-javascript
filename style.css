@@ -20,6 +20,33 @@ header{
     margin-left: 200px;
 }
 
+.sort{
+    display: flex;
+    flex-direction: row;
+}
+
+.sort label{
+    color: white;
+    margin-right: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4em;
+}
+
+.sort select{
+    border: 2px solid #4ECCA3;
+    border-radius: 5px;
+    background-color: #232931;
+    width: 70px;
+    text-align: center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+.sort option{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
 
 .search-container{
     background-color: #232931;

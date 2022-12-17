@@ -3,6 +3,7 @@ let cardsSection=document.querySelector(".cards");
 let asideContainer=document.querySelector(".modal");
 let asideEdit=document.querySelector(".edit-container");
 let searchZone=document.querySelector(".search-container");
+let sortMeniuZone=document.querySelector(".sort-meniu");
 createButtons(data,6);
 createPage(1);
 
@@ -119,4 +120,20 @@ searchZone.addEventListener("click",(e)=>{
         alert("Numele introdus incorect");
     }
 }
+})
+
+
+sortMeniuZone.addEventListener("change",(e)=>{
+
+    if(sortMeniuZone.value==='nume'){
+        cardsSection.innerHTML=" ";
+        paginationSection.children[0].innerHTML=" ";
+        createButtons(sortByName(data),6);
+        createPage(1);
+    }else if(sortMeniuZone.value==='email'){
+        cardsSection.innerHTML=" ";
+        paginationSection.children[0].innerHTML=" ";
+        createButtons(sortByEmail(data),6);
+        createPage(1);
+    }
 })
